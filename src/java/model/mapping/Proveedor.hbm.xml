@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-jul-2012 20:26:29 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="agustins_bodega" name="model.entity.Proveedor" table="proveedor">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="ruc" type="string">
+      <column length="11" name="ruc" not-null="true" unique="true"/>
+    </property>
+    <property name="razonSocial" type="string">
+      <column length="50" name="razon_social" not-null="true" unique="true"/>
+    </property>
+    <property name="nombreComercial" type="string">
+      <column length="50" name="nombre_comercial"/>
+    </property>
+    <property name="representante" type="string">
+      <column length="50" name="representante"/>
+    </property>
+    <property name="cargo" type="string">
+      <column length="50" name="cargo">
+        <comment>cargo del representante del proveedor</comment>
+      </column>
+    </property>
+    <property name="direccion" type="string">
+      <column length="50" name="direccion"/>
+    </property>
+    <property name="telefono" type="string">
+      <column length="50" name="telefono"/>
+    </property>
+    <property name="celular" type="string">
+      <column length="50" name="celular"/>
+    </property>
+    <property name="email" type="string">
+      <column length="50" name="email"/>
+    </property>
+    <set inverse="true" name="cabeceras">
+      <key>
+        <column name="id_proveedor"/>
+      </key>
+      <one-to-many class="model.entity.Cabecera"/>
+    </set>
+  </class>
+</hibernate-mapping>

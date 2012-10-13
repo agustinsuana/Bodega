@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="inicio">
+            <result>administracion.jsp</result>
+        </action>
+        <action name="nuevaCategoria">
+            <result>nuevaCategoria.jsp</result>
+        </action>
+        <action name="registrarCategoria" class="controller.CategoriaController" method="registrar">
+            <result name="exito">listadoCategorias.jsp</result>
+        </action>
+        
+        <action name="listadoCategorias" class="controller.CategoriaController" method="listar">
+            <result name="exito">listadoCategorias.jsp</result>
+        </action>
+        <action name="editarCategoria" class="controller.CategoriaController" method="editar">
+            <result name="exito">editarCategoria.jsp</result>
+        </action>
+        <action name="actualizarCategoria" class="controller.CategoriaController" method="actualizar">
+            <result name="exito">mensajeCategoria.jsp</result>
+        </action>
+        <action name="eliminarCategoria" class="controller.CategoriaController" method="eliminar">
+            <result name="exito">mensajeCategoria.jsp</result>
+        </action>
+        
+        <action name="listadoClientes" class="controller.ClienteController" method="listar">
+            <result name="exito">listadoClientes.jsp</result>
+        </action>
+        <action name="nuevoCliente">
+            <result>nuevoCliente.jsp</result>
+        </action>
+        <action name="registrarCliente" class="controller.ClienteController" method="registrar">
+            <result name="exito">mensajeCliente.jsp</result>
+        </action>
+        <action name="editarCliente" class="controller.ClienteController" method="editar">
+            <result name="exito">editarCliente.jsp</result>
+        </action>
+        <action name="actualizarCliente" class="controller.ClienteController" method="actualizar">
+            <result name="exito">mensajeCliente.jsp</result>
+        </action>
+        <action name="eliminarCliente" class="controller.ClienteController" method="eliminar">
+            <result name="exito">mensajeCliente.jsp</result>
+        </action>
+        
+        <action name="listadoProveedores" class="controller.ProveedorController" method="listar">
+            <result name="exito">listadoProveedor.jsp</result>
+        </action>
+        <action name="nuevoProveedor">
+            <result>nuevoProveedor.jsp</result>
+        </action>
+        <action name="registrarProveedor" class="controller.ProveedorController" method="registrar">
+            <result name="exito">mensajeProveedor.jsp</result>
+        </action>
+        <action name="editarProveedor" class="controller.ProveedorController" method="editar">
+            <result name="exito">editarProveedor.jsp</result>
+        </action>
+        <action name="actualizarProveedor" class="controller.ProveedorController" method="actualizar">
+            <result name="exito">mensajeProveedor.jsp</result>
+        </action>
+        <action name="eliminarProveedor" class="controller.ProveedorController" method="eliminar">
+            <result name="exito">mensajeProveedor.jsp</result>
+        </action>
+        
+        <action name="listadoProductos" class="controller.ProductoController" method="listar">
+            <result name="exito">listadoProductos.jsp</result>
+        </action>
+        <action name="nuevoProducto" class="controller.CategoriaController" method="listar">
+            <result name="exito">nuevoProducto.jsp</result>
+        </action>
+        <action name="registrarProducto" class="controller.ProductoController" method="registrar">
+            <result name="exito">mensajeProducto.jsp</result>
+        </action>
+        <action name="registrarProducto" class="controller.CategoriaController" method="registrar">
+            <result name="exito">mensajeProducto.jsp</result>
+        </action>
+    </package>    
+</struts>

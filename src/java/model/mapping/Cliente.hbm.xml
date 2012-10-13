@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-jul-2012 20:26:29 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="agustins_bodega" name="model.entity.Cliente" table="cliente">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="dniruc" type="string">
+      <column length="11" name="dniruc" not-null="true" unique="true"/>
+    </property>
+    <property name="nombres" type="string">
+      <column length="50" name="nombres"/>
+    </property>
+    <property name="apellidos" type="string">
+      <column length="50" name="apellidos"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="50" name="direccion"/>
+    </property>
+    <property name="telefono" type="string">
+      <column length="50" name="telefono"/>
+    </property>
+    <property name="celular" type="string">
+      <column length="50" name="celular"/>
+    </property>
+    <property name="email" type="string">
+      <column length="50" name="email"/>
+    </property>
+    <set inverse="true" name="cabeceras">
+      <key>
+        <column name="id_cliente"/>
+      </key>
+      <one-to-many class="model.entity.Cabecera"/>
+    </set>
+  </class>
+</hibernate-mapping>

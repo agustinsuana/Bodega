@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-jul-2012 20:26:29 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="agustins_bodega" name="model.entity.Detalle" table="detalle">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="model.entity.Cabecera" fetch="select" name="cabecera">
+      <column name="id_cabecera"/>
+    </many-to-one>
+    <many-to-one class="model.entity.Producto" fetch="select" name="producto">
+      <column name="id_producto"/>
+    </many-to-one>
+    <property name="precio" type="big_decimal">
+      <column name="precio" precision="10"/>
+    </property>
+    <property name="cantidad" type="big_decimal">
+      <column name="cantidad" precision="10"/>
+    </property>
+  </class>
+</hibernate-mapping>

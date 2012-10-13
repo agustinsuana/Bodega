@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 08-jul-2012 20:26:29 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="agustins_bodega" name="model.entity.Cabecera" table="cabecera">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="model.entity.Cliente" fetch="select" name="cliente">
+      <column name="id_cliente"/>
+    </many-to-one>
+    <many-to-one class="model.entity.Proveedor" fetch="select" name="proveedor">
+      <column name="id_proveedor"/>
+    </many-to-one>
+    <property name="fecha" type="date">
+      <column length="10" name="fecha"/>
+    </property>
+    <property name="operacion" type="java.lang.Character">
+      <column length="1" name="operacion"/>
+    </property>
+    <property name="serie" type="java.lang.Integer">
+      <column name="serie"/>
+    </property>
+    <property name="numero" type="java.lang.Integer">
+      <column name="numero"/>
+    </property>
+    <property name="subtotal" type="big_decimal">
+      <column name="subtotal" precision="10" scale="4"/>
+    </property>
+    <property name="ivg" type="big_decimal">
+      <column name="ivg" precision="10" scale="4"/>
+    </property>
+    <property name="total" type="big_decimal">
+      <column name="total" precision="10" scale="4"/>
+    </property>
+    <set inverse="true" name="detalles">
+      <key>
+        <column name="id_cabecera"/>
+      </key>
+      <one-to-many class="model.entity.Detalle"/>
+    </set>
+  </class>
+</hibernate-mapping>
