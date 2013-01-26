@@ -4,9 +4,9 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://agustinsuana.co.cc:3306/agustins_bodega</property>
-    <property name="hibernate.connection.username">agustins_bodega</property>
-    <property name="hibernate.connection.password">bodega123</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost/bodega</property>
+    <property name="hibernate.connection.username">bodega</property>
+    <property name="hibernate.connection.password">bodega</property>
     <property name="hibernate.connection.pool_size">1</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="model/mapping/Proveedor.hbm.xml"/>
